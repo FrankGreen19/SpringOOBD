@@ -1,6 +1,8 @@
 package com.oobd.oobd_spring.controllers;
 
+import com.oobd.oobd_spring.models.Client;
 import com.oobd.oobd_spring.models.Order;
+import com.oobd.oobd_spring.repositories.ClientRepository;
 import com.oobd.oobd_spring.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,10 +16,16 @@ public class GreetingController {
     @Autowired
     OrderRepository orderRepository;
 
+    @Autowired
+    ClientRepository clientRepository;
+
     @GetMapping("/greeting")
     public String greeting(@RequestParam(name="name", required=false, defaultValue="World") String name, Model model) {
         model.addAttribute("name", name);
         Iterable<Order> orders = orderRepository.findAll();
+        Client client = new Client();
+        client.setDiscount(5);
+        clientRepository.save(client);
         return "greeting";
     }
 

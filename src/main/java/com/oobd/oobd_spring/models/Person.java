@@ -2,8 +2,14 @@ package com.oobd.oobd_spring.models;
 
 import javax.persistence.*;
 
+import static javax.persistence.InheritanceType.*;
+
 @MappedSuperclass
-public class Person {
+//@Entity
+////@Inheritance(strategy = SINGLE_TABLE)
+////@Inheritance(strategy = SINGLE_TABLE)
+//@Inheritance(strategy = TABLE_PER_CLASS)
+public class Person extends AbstractEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -28,7 +34,6 @@ public class Person {
     }
 
     public Person() {}
-
 
     public String getEmail() {
         return email;
@@ -68,6 +73,11 @@ public class Person {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    @Override
+    public Integer getId() {
+        return id;
     }
 
     public void setId(Integer id) {

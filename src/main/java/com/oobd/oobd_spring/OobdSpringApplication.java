@@ -1,0 +1,13 @@
+package com.oobd.oobd_spring;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class OobdSpringApplication {
+
+    public static void main(String[] args) {
+        SpringApplication.run(OobdSpringApplication.class, args);
+    }
+
+}

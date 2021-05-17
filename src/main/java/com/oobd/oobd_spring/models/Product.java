@@ -1,9 +1,10 @@
 package com.oobd.oobd_spring.models;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
-public class Product {
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

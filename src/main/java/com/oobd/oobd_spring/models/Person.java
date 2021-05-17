@@ -6,7 +6,7 @@ import static javax.persistence.InheritanceType.*;
 
 @MappedSuperclass
 //@Entity
-////@Inheritance(strategy = SINGLE_TABLE)
+//@Inheritance(strategy = JOINED)
 ////@Inheritance(strategy = SINGLE_TABLE)
 //@Inheritance(strategy = TABLE_PER_CLASS)
 public class Person extends AbstractEntity{
